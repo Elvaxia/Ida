@@ -1,0 +1,5 @@
+ID	from	diagnosis	type	lib	sample	Bam	Seq_depth	Group
+CL100072036_L02_1	BGI2	early Pre-B ALL	PBMC	total	ALL-1	/mnt/data1/liyupeng/data/SecondHospital/BGI2/bam/CL100072036_L02_1.Aligned.sortedByCoord.out.bam	85377152	ALL
+CL100072036_L02_3	BGI2	early Pre-B ALL	PBMC	total	ALL-2	/mnt/data1/liyupeng/data/SecondHospital/BGI2/bam/CL100072036_L02_3.Aligned.sortedByCoord.out.bam	80454195	ALL
+CL100072036_L01_100	BGI2	control	PBMC	total	CTRL-1	/mnt/data1/liyupeng/data/SecondHospital/BGI2/bam/CL100072036_L01_100.Aligned.sortedByCoord.out.bam	75847543	Control
+CL100072036_L01_101	BGI2	control	PBMC	total	CTRL-2	/mnt/data1/liyupeng/data/SecondHospital/BGI2/bam/CL100072036_L01_101.Aligned.sortedByCoord.out.bam	81897864	Control

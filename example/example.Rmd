@@ -1,2 +1,34 @@
-library(Ida)
+```{r}
+suppressPackageStartupMessages({
+  library(Ida)
+  library(data.table)
+  library(GenomicRanges)
+  library(GenomicFeatures)
+  library(dplyr)
+  library(changepoint)
+  library(parallel)
+  library(Rsamtools)
+})
+```
 
+```{r}
+anno_file <- fread('hg38_93_unioned_3utr.txt')
+anno_file$use.names <- anno_file$gene_id
+sample.info <- fread('ALL_sample.info.txt')
+```
+
+```{r}
+GrList <- makeGRangesListFromDataFrame(anno_file,
+                                       keep.extra.columns = TRUE,
+                                       split.field = 'gene_id')
+GRs <- GrList[3:5]
+
+pb <- txtProgressBar(min = 0, max = length(GRs), style = 3)
+all.res <- do.call(rbind,lapply(1:length(GRs), function(i){
+  Sys.sleep(0.1)
+  setTxtProgressBar(pb, i)
+  res <- DetectPAs(GRs[[i]],sample.info)
+  return(res)
+}))
+all.res
+```
